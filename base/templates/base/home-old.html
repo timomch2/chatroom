@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+    <!-- <h1 class="text-3xl font-bold underline"> HELLO WORLD</h1> -->
+    <div class="home-container">
+        <div class="sidebar">
+            {% include 'base/components/topics_component.html' %}
+        </div>
+        <div class="div">
+            <h6> {{ room_count }} rooms available </h6>
+            <a href="{% url 'create-room' %}" class="btn btn-sm btn-primary"> Create Room </a> <br> <br>
+            {% include 'base/components/feed_component.html' %}
+        </div>
+
+        <div class="recent-activity">
+            {% include 'base/components/activity_component.html' %}
+        </div>
+    </div>
+
+{% endblock %}

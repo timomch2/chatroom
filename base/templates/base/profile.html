@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+    <div class="home-container">
+        <div class="sidebar">
+            {% include 'base/components/topics_component.html' %}
+        </div>
+        <div class="profile">
+            <h3>{{ user.username }}</h3>
+            {% include 'base/components/feed_component.html' %}
+        </div>
+
+        <div class="recent-activity">
+            {% include 'base/components/activity_component.html' %}
+        </div>
+    </div>
+
+{% endblock %}
