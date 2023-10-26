@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from base.models import Topic
 
 def userProfile(request, pk):
@@ -13,3 +14,7 @@ def userProfile(request, pk):
 def myProfile(request):
     context = { 'user': request.user}
     return render(request, 'base/profile.html', context )
+@login_required(login_url='login')
+def updateUser(request):
+    context  = {'user':request.user}
+    return render(request, 'base/update_user.html', context)
